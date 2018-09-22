@@ -1,4 +1,4 @@
-package hungergames.models;
+package hungergames.Controllers;
 
 public class BattleController {
 

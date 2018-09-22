@@ -1,14 +1,17 @@
-package hungergames.models;
+package hungergames.models.Contestant;
 
-import java.util.Random;
+import hungergames.Controllers.GameController;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Contestants {
-    int attackLevel;
-    int defenseLevel;
-    int healthLevel;
-    boolean female;
-    int number;
-    boolean alive;
+public class Contestant {
+    private int attackLevel;
+    private int defenseLevel;
+    private int healthLevel;
+    private boolean female = true;
+    private int number;
+    private boolean alive = true;
+    private boolean hasWeapon;
 
     public boolean isAlive() {
         return alive;
@@ -56,5 +59,13 @@ public class Contestants {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public boolean isHasWeapon() {
+        return hasWeapon;
+    }
+
+    public void setHasWeapon(boolean hasWeapon) {
+        this.hasWeapon = hasWeapon;
     }
 }

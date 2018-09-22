@@ -1,13 +1,14 @@
 package hungergames;
 
-import hungergames.models.GameController;
+import hungergames.Controllers.GameController;
 
 public class Main {
 
     public static void main(String[] args) {
         // write your code here
         GameController masterBrain = new GameController();
-        masterBrain.assignPlayers();
+        masterBrain.assignDistrictPlayers();
+        masterBrain.assignCareerPlayers();
 
     }
 
