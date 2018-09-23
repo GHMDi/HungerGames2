@@ -5,9 +5,11 @@ import hungergames.models.Contestant.DistrictContestant;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GameController{
+
     List<Contestant> contestantList = new ArrayList<Contestant>();
 
     public void assignDistrictPlayers() {
@@ -44,7 +46,7 @@ public class GameController{
                 player.setHealthLevel(100);
                 player.setNumber(i+1);
                 player.setAttackLevel(ThreadLocalRandom.current().nextInt(10,40));
-                player.setDefenseLevel(ThreadLocalRandom.current().nextInt(1,10));
+                player.setDefenseLevel(ThreadLocalRandom.current().nextInt(5,15));
                 player.setHasWeapon(true);
                 if (i <= 20){
                     player.setFemale(true);
@@ -63,6 +65,46 @@ public class GameController{
 
         // in deze for loop creer je een void method waarbij je in een loop door het team gaat waarbij het
         // player number i +1 is. Dus player nummer begint bij 1 (omdat index 0 + 1 = nummer 1)
+    }
+
+    public void controlGame(Contestant contestant) {
+        // check with Eva & Rick how to access the contestants in controlGame method.
+        int size = contestantList.size();
+        Random randA = new Random();
+        Random randO = new Random();
+
+        for (int i = 0; i > size; i++) {
+            int indexA = randA.nextInt(size);
+            System.out.println("Day: " + i);
+            System.out.println("Selected Attacker: " + contestantList.remove(indexA));
+            contestant.getNumber();
+            contestant.getHealthLevel();
+            contestant.getAttackLevel();
+            contestant.getDefenseLevel();
+            contestant.setAttacker(true);
+            System.out.println(contestant.getAttackLevel());
+            System.out.println(contestant.isOpponent());
+
+            int indexO = randO.nextInt(size);
+            System.out.println("Selected Opponent: " + contestantList.remove(indexO));
+            System.out.println(contestant.getAttackLevel());
+            System.out.println("Selected Opponent");
+            contestant.getNumber();
+            contestant.getHealthLevel();
+            contestant.getAttackLevel();
+            contestant.getDefenseLevel();
+            contestant.setOpponent(true);
+            System.out.println(contestant.getAttackLevel());
+            System.out.println(contestant.isOpponent());
+
+
+//
+//        }
+//        while(size > 0) {
+//            int index = rand.nextInt(size);
+//            System.out.println("Selected: "+ contestantList.remove(index));
+//        }
+        }
     }
 
     public List<Contestant> getContestantList() {

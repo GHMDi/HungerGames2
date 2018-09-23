@@ -1,10 +1,6 @@
 package hungergames.models.Contestant;
 
-import hungergames.Controllers.GameController;
-import java.util.ArrayList;
-import java.util.List;
-
-public class Contestant {
+public abstract class Contestant {
     private int attackLevel;
     private int defenseLevel;
     private int healthLevel;
@@ -12,6 +8,8 @@ public class Contestant {
     private int number;
     private boolean alive = true;
     private boolean hasWeapon;
+    private boolean attacker;
+    private boolean opponent;
 
     public boolean isAlive() {
         return alive;
@@ -67,5 +65,21 @@ public class Contestant {
 
     public void setHasWeapon(boolean hasWeapon) {
         this.hasWeapon = hasWeapon;
+    }
+
+    public boolean isAttacker() {
+        return attacker;
+    }
+
+    public void setAttacker(boolean attacker) {
+        this.attacker = attacker;
+    }
+
+    public boolean isOpponent() {
+        return opponent;
+    }
+
+    public void setOpponent(boolean opponent) {
+        this.opponent = opponent;
     }
 }

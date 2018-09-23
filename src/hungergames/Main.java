@@ -1,6 +1,7 @@
 package hungergames;
 
 import hungergames.Controllers.GameController;
+import hungergames.models.Contestant.Contestant;
 
 public class Main {
 
