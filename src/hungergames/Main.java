@@ -10,6 +10,8 @@ public class Main {
         GameController masterBrain = new GameController();
         masterBrain.assignDistrictPlayers();
         masterBrain.assignCareerPlayers();
+        masterBrain.battle();
+//        masterBrain.battle();
 
     }
 

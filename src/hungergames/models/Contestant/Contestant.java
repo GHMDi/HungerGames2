@@ -1,15 +1,38 @@
 package hungergames.models.Contestant;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public abstract class Contestant {
     private int attackLevel;
     private int defenseLevel;
     private int healthLevel;
     private boolean female = true;
     private int number;
+    private String name;
     private boolean alive = true;
     private boolean hasWeapon;
     private boolean attacker;
     private boolean opponent;
+    private boolean winner;
+
+    public Contestant (){
+        setHealthLevel(100);
+        setAttackLevel(ThreadLocalRandom.current().nextInt(1, 30));
+        setDefenseLevel(ThreadLocalRandom.current().nextInt(1, 10));
+        setFemale(true);
+        this.setAttackLevel(attackLevel);
+    }
+    public void regenerate(){
+        setHealthLevel(100);
+    }
+
+    public void receiveDamage(int damage)
+    {
+        healthLevel -= damage;
+        if(healthLevel <= 0)
+            alive = false;
+    }
+
 
     public boolean isAlive() {
         return alive;
@@ -81,5 +104,21 @@ public abstract class Contestant {
 
     public void setOpponent(boolean opponent) {
         this.opponent = opponent;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isWinner() {
+        return winner;
+    }
+
+    public void setWinner(boolean winner) {
+        this.winner = winner;
     }
 }
