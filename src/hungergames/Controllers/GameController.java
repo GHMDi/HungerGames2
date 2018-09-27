@@ -84,7 +84,7 @@ public class GameController {
         }
     }
 
-    public void normalFight1()
+    public void normalFight()
     {
         while (Attacker.isAlive() && Opponent.isAlive())
         {
@@ -116,17 +116,6 @@ public class GameController {
         }
     }
 
-//    public void normalFight() {
-//            int damage = (Attacker.getAttackLevel() - Opponent.getDefenseLevel());
-//            int health = Opponent.getHealthLevel() - damage;
-//            System.out.println("Attacker " + Attacker.getNumber() + "'s attack does " + damage + " damage!\n");
-//            System.out.println("Opponent " + Opponent.getNumber() + "'s Health is " + health);
-//            Opponent.setHealthLevel(health);
-//            if (Opponent.getHealthLevel() < 0) {
-//                System.out.println("Contestant number " + Opponent.getNumber() + " died.");
-//            }
-//        }
-
 
     public void battle() {
         int day = 1;
@@ -134,7 +123,7 @@ public class GameController {
             System.out.println("Welcome to day " + day++ + " of the hungergames");
             selectFighters();
 //            coinFlip();
-            normalFight1();
+            normalFight();
         }
         System.out.println(contestantList.get(0).getName() + " is the lone survivor!");
         if(contestantList.size() < 1){
