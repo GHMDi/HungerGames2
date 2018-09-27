@@ -3,6 +3,7 @@ package hungergames.models.Contestant;
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Contestant {
+//    made Contestant abstract as only DistrictContestant and CareerContestant are allowed to be created
     private int attackLevel;
     private int defenseLevel;
     private int healthLevel;
@@ -16,16 +17,20 @@ public abstract class Contestant {
     private boolean winner;
 
     public Contestant (){
+//        Created base contestant with all necessary info, random attack & defense and health 100
         setHealthLevel(100);
         setAttackLevel(ThreadLocalRandom.current().nextInt(10, 30));
         setDefenseLevel(ThreadLocalRandom.current().nextInt(5, 10));
         setFemale(true);
         this.setAttackLevel(attackLevel);
     }
+
+//    Create function to regenerate health at 100 during sleep
     public void regenerate(){
         setHealthLevel(100);
     }
 
+//    Create method to receive damage, which is used in battle()
     public void receiveDamage(int damage)
     {
         healthLevel -= damage;
