@@ -85,6 +85,7 @@ public class GameController {
     }
 
     public void normalFight()
+//            parameters meegeven Contestant Attacker, Contestant Opponent
     {
         while (Attacker.isAlive() && Opponent.isAlive())
         {
@@ -98,7 +99,7 @@ public class GameController {
             System.out.println("Opponent : " + Opponent.getName() + " still has " + Opponent.getHealthLevel() + " health.");
             Attacker.receiveDamage(damageO);
             System.out.println("Attacker : " + Attacker.getName() + " still has " + Attacker.getHealthLevel() + " health.");
-
+// In the while loop i need to make an nested if statement that if
             if(!Opponent.isAlive())
             {
                 contestantList.add(Attacker);
@@ -133,6 +134,9 @@ public class GameController {
     }
 
         public void selectFighters () {
+//        public Contestant selectFighters(){
+//        return Contestant (Attacker, Opponent) die je kunt gebruiken in Battles
+
             // select contestant from Contestantlist --> name it as contestant1 - Attacker
             // select contestant from Constestantlist --> name it as contestant2 - Defense
             // hier moet een random order gepickt worden voor een array.

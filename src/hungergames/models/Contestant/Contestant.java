@@ -18,7 +18,7 @@ public abstract class Contestant {
     public Contestant (){
         setHealthLevel(100);
         setAttackLevel(ThreadLocalRandom.current().nextInt(10, 30));
-        setDefenseLevel(ThreadLocalRandom.current().nextInt(5, 20));
+        setDefenseLevel(ThreadLocalRandom.current().nextInt(5, 10));
         setFemale(true);
         this.setAttackLevel(attackLevel);
     }
