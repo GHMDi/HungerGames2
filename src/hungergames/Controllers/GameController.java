@@ -17,6 +17,11 @@ public class GameController {
     private int indexO;
     private int indexA;
 
+    public void assignPlayers(){
+        assignDistrictPlayers();
+        assignCareerPlayers();
+    }
+
     public void assignDistrictPlayers() {
 //         ADD 75% (18 District contestants and 6 Career Contestants
         for (int i = 0; i < 18; i++) {

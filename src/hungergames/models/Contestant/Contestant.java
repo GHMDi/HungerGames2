@@ -25,14 +25,15 @@ public abstract class Contestant {
         this.setAttackLevel(attackLevel);
     }
 
-//    Create function to regenerate health at 100 during sleep
     public void regenerate(){
+//       Created function to regenerate health at 100 during sleep
         setHealthLevel(100);
     }
 
-//    Create method to receive damage, which is used in battle()
+
     public void receiveDamage(int damage)
     {
+//        Created method to receive damage, which is used in battle()
         healthLevel -= damage;
         if(healthLevel <= 0)
             alive = false;
